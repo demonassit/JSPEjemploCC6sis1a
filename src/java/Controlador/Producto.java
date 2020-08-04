@@ -124,6 +124,52 @@ public class Producto {
         
     }
     
+    //el metodo que se encarga de actualizar el stock
+    //para poder actualizar debe de tener un elemento de tipo bandera
+    // a que me identifique si se o no se actualizo
+    
+    public boolean actualizarStock(Vector<Producto> vp){
+    
+        boolean actualizo=false;
+        Connection con = null;
+        PreparedStatement ps = null;
+        
+        try{
+            
+            con = Conexion.getConnection();
+            for(Producto prod : vp){
+                String q = "update Producto set producto_stock = ? where producto_Codigo = ?";
+                ps = con.prepareStatement(q);
+                ps.setInt(1, prod.getProducto_Stock());
+                ps.setInt(2, prod.getProducto_Codigo());
+                if(ps.executeUpdate() == 1){
+                    actualizo = true;
+                }else{
+                    actualizo = false;
+                    break;
+                }
+            }
+        
+        }catch(SQLException e){
+            System.out.println("Error al actualizar el stock");
+            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
+            actualizo = false;
+        
+        }finally{
+            try{
+                ps.close();
+                con.close();
+            
+            }catch(SQLException e){
+                System.out.println(e.getStackTrace());
+            }
+        }
+        return actualizo;
+        
+    }
+    
+    
     
     //creamos los getter y setter
 
