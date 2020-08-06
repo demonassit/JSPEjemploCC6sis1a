@@ -4,9 +4,17 @@
         <servlet-name>VerificarUsuario</servlet-name>
         <servlet-class>Servlet.VerificarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AgregarCarro</servlet-name>
+        <servlet-class>Servlet.AgregarCarro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerificarUsuario</servlet-name>
         <url-pattern>/VerificarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarCarro</servlet-name>
+        <url-pattern>/AgregarCarro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
