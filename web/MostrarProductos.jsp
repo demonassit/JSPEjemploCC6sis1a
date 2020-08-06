@@ -31,6 +31,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Productos</title>
+        <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
         
@@ -38,7 +39,61 @@
     //vamos a obtener la lista de productos
     Vector<Producto> vecPro = new Producto().listaProductos();
 %>    
-        
+    <p> <b> Bienvenido</b> </p><%=usuario%> 
+    <table width="800" border="0" align="center" >
+        <tr>
+            <td width="84" bgcolor="#FF0000" >
+                <img src="img/imagen01.jpg" width="84" height="77" >
+            </td>
+            <td width="716" bgcolor="#FF0000" >
+                <h1 style="color:#FFFFFF">
+                    Carrito de Compras
+                </h1>
+            </td>
+        </tr>
+        <tr align="center" >
+                <td colspan="2" ></td>
+            </tr>
+            <tr align="center" >
+                <td colspan="2" >
+                    <h4> <a href="MostrarProductos.jsp" >Consultar Productos</a> | <a>Agregar al carrito</a> | <a>Cerrar sesión</a> </h4>
+                </td>
+            </tr>
+            <tr></tr>
+            <tr align="center" >
+                <td colspan="2" ></td>
+            </tr>
+            <tr>
+                <td colspan="2" >
+                    <table width="100%" border="0" >
+                        <tr>
+                            <td width="68%" >
+                                <h4>Nombre</h4>
+                            </td>
+                            <td width="16%" align="right" valing="top" >
+                                <h4><span class="Estilo3" >Stock</span></h4>
+                            </td>
+                            <td width="16%" align="right" valing="top" >
+                                <h4><span class="Estilo3" >Precio</span></h4>
+                            </td>
+                        </tr>
+                        <%
+                            //llenamos la tabla de los productos
+                            for(Producto prod : vecPro){
+                        %>
+                        <tr>
+                            <td> <%=prod.getProducto_Nombre() %> </td>
+                            <td align="right" valing="top" > <%=prod.getProducto_Stock() %> </td>
+                            <td align="right" valing="top" > <%=prod.getProducto_Precio()%> </td>
+                        </tr>
+                        <%}%>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+    </table>
         
     </body>
 </html>
