@@ -25,7 +25,13 @@ body, th, td {
     font-weight: bold;
 }
 
-Estilo2 {
+.Estilo2 {
     
     color:#FFFFFF;
+}
+
+.Estilo3{
+    
+    color:#FFFFFF;
+    font-weight: bold;
 }
