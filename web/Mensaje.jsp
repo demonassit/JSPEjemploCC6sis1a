@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MostrarCarrito
-    Created on : 7/08/2020, 07:09:47 AM
+    Document   : Mensaje
+    Created on : 7/08/2020, 07:48:00 AM
     Author     : demon
 --%>
 
@@ -30,15 +30,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Consulta de Productos</title>
+        <title>Agregar Productos</title>
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
-        <% 
-    //vamos a obtener la lista de productos del detalle
-    Vector<DetalleVenta> vectorDetalle = (Vector<DetalleVenta>)session.getAttribute("detalleVenta");
-    Vector<Producto> vectorStock = null;
-%>  
         <table width="800" border="0" align="center" >
         <tr>
             <td width="84" bgcolor="#FF0000" >
@@ -60,39 +55,18 @@
             </tr>
             <tr></tr>
             <tr align="center" >
-                <td colspan="2" ></td>
+                <td colspan="2" >
+                    <h1>Se registro la compra de forma exitosa</h1>
+                </td>
             </tr>
             <tr>
                 <td colspan="2" >
-                    <table width="100%" border="0" >
-                        <tr>
-                            <td width="68%" >
-                                <h4>Nombre</h4>
-                            </td>
-                            <td width="16%" align="right" valing="top" >
-                                <h4><span class="Estilo3" >Cantidad</span></h4>
-                            </td>
-                            <td width="16%" align="right" valing="top" >
-                                <h4><span class="Estilo3" >Sub Total</span></h4>
-                            </td>
-                        </tr>
-                        <%
-                            //llenamos la tabla de los productos
-                            for(DetalleVenta det : vectorDetalle){
-                                Producto prod = new Producto().buscarProducto(det.getProducto_Codigo());
-                        %>
-                        <tr>
-                            <td> <%=prod.getProducto_Nombre() %> </td>
-                            <td align="right" valing="top" > <%=det.getDetVenta_Cantidad() %> </td>
-                            <td align="right" valing="top" > <%=det.getDetVenta_Subtotal() %> </td>
-                        </tr>
-                        <%}%>
-                    </table>
+                    
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <a href="FinalizarCompra" >Finalizar Compra</a>
+                    
                 </td>
             </tr>
         </table>
