@@ -55,7 +55,7 @@
             </tr>
             <tr align="center" >
                 <td colspan="2" >
-                    <h4> <a href="MostrarProductos.jsp" >Consultar Productos</a> | <a href="AgregarProducto1.jsp" >Agregar al carrito</a> | <a>Cerrar sesión</a> </h4>
+                    <h4> <a href="MostrarProductos.jsp" >Consultar Productos</a> | <a href="AgregarProducto1.jsp" >Agregar al carrito</a> | <a href="CerrarSesion" >Cerrar sesión</a> </h4>
                 </td>
             </tr>
             <tr></tr>
